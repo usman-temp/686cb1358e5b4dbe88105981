@@ -3,9 +3,19 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Why Choose Us - Company Name',
   description: 'Discover our unique value proposition, expert team, and proven track record in delivering innovative solutions.',
-  keywords: ['USP', 'value proposition', 'expertise', 'testimonials', 'why choose us']
+  keywords: ['technology solutions', 'industry expertise', 'client success', 'innovation leaders', 'award-winning team'],
+  openGraph: {
+    title: 'Why Choose Us - Company Name',
+    description: 'Discover our award-winning technology solutions and client-first approach',
+    images: [
+      {
+        url: '/og-why-us.jpg',
+        width: 1200,
+        height: 630
+      }
+    ]
+  }
 };
-
 const testimonials = [
   {
     name: 'Sarah Johnson',
