@@ -1,3 +1,50 @@
+'use client';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+
+const formSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  subject: z.string().min(5, 'Subject must be at least 5 characters'),
+  message: z.string().min(10, 'Message must be at least 10 characters')
+});
+
+export default function ContactPage() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(formSchema)
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error('Submission failed');
+      alert('Message sent successfully!');
+    } catch (_error) {
+      alert('Error submitting form. Please try again.');
+    }
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
+      
+      <div className="grid md:grid-cols-2 gap-12">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          {/* ... rest of the form JSX remains unchanged ... */}
+        </form>
+
+        <div className="space-y-6">
+          {/* ... rest of the company info JSX remains unchanged ... */}
+        </div>
+      </div>
+    </div>
+  );
+}
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
