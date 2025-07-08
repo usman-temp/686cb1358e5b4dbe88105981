@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: 'Michael Chen',
     role: 'Product Manager, StartUp Inc',
-    text: 'Exceptional expertise and reliable delivery - truly partners in our success.'
+      <section className="text-center mb-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4 rounded-2xl motion-safe:animate-fade-in">
   }
 ];
 
