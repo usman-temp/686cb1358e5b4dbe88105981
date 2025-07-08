@@ -28,13 +28,6 @@ export default function ContactPage() {
       alert('Error submitting form. Please try again.');
     }
   };
-
-  return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
-      
-      <div className="grid md:grid-cols-2 gap-12">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* ... rest of the form JSX remains unchanged ... */}
         </form>
 
