@@ -72,7 +72,9 @@ export default function ContactPage() {
               className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-              We respect your privacy. Your information will only be used to respond to your inquiry.
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            We respect your privacy. Your information will only be used to respond to your inquiry.
+          </p>
 
 
           <div>
