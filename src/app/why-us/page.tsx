@@ -33,15 +33,23 @@ export default function WhyUsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
-      <section className="text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-4">
-          Why Choose Company Name?
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          We deliver transformative solutions through innovative technology, proven expertise, and unwavering commitment to client success.
-        </p>
-      </section>
-
+      <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {[
+          { title: 'Innovation Engine', icon: '🚀' },
+          { title: 'Proven Expertise', icon: '🏆' },
+          { title: 'Client-Centric', icon: '❤️' }
+        ].map((item) => (
+          <div key={item.title} className="p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 group" role="region" aria-label={item.title}>
+            <div className="text-4xl mb-4 motion-safe:animate-scale-in">{item.icon}</div>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{item.title}</h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              {item.title === 'Innovation Engine' && 'Pioneering solutions that redefine industry standards through cutting-edge R&D and $2.4B annual investment'}
+              {item.title === 'Proven Expertise' && '2000+ successful implementations across 30 industries with 98% client satisfaction rate'}
+              {item.title === 'Client-Centric' && 'Dedicated partnership model with 24/7 support ensuring alignment with your strategic objectives'}
+            </p>
+          </div>
+        ))}
+      </div>
       {/* Value Propositions */}
       <div className="grid md:grid-cols-3 gap-8 mb-16">
         {['Innovation Engine', 'Proven Expertise', 'Client-Centric'].map((title) => (
